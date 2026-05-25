@@ -1,0 +1,98 @@
+*{
+
+    box-sizing: border-box;
+}
+body{
+    /*Centering everything and changing the bgcolor  */
+background-color: darkgray;
+color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+font-family: sans-serif;
+flex-direction: column;
+}
+.container
+{
+    /* inside the body there is the main containerin which we have placed the form  */
+    background-color: white;
+    padding:4rem;
+    border-radius: 10px;
+}
+.container h1{
+    /*  we are centering the text of h1 inside the container along with the margin bottom */
+    text-align: center;
+    margin-bottom:40px ;
+}
+.special
+{
+    background-color: rgb(193, 24, 58);
+    color: white;
+    padding: 5px 20px;
+
+}
+.Form-content
+{
+    /* in the form content the margin provide the space between the two placeholders */
+    position: relative;
+    width: 300px;
+    margin: 20px 0 40px ;
+}
+.Form-content input{
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid black;/* creates the bootom border to highlight the entery */
+
+    display: block;
+
+    width: 100%;/* in the form content the input takes the full width of 100% that means where you want to enter the details the below line takes 100%space */
+    padding: 15px 0;
+    font-size: 18px;
+    color:black;
+    
+}
+.Form-content input:focus,
+.Form-content input:valid{
+    /* after clicking the placeholder for entering the details the border willl become red and the ooutline is set to 0 that means when we enter or click the placeholder there will not be any outline */
+    outline: 0; 
+    border-bottom: 5px solid rgb(193, 24, 58);
+}
+.btn{
+padding: 10px 15px;
+background-color: rgb(193, 24, 58);
+color: white;
+font-size: 12px;
+font-weight: bold;
+cursor: pointer;
+display: inline-block;
+width: 100%;
+}
+btn:active
+{
+    transform: scale(0.9);
+}
+.Form-content label{
+/* the form contel label is nothing but the title like email or password */
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+/*  used for javascript */
+.Form-content label span{
+display: inline-block;
+font-size: 18px;
+min-width: 5px;
+transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.Form-content input:focus + label span,
+.Form-content input:valid + label span{
+    /* focus and valid in css 
+    focus means whenever the  user types the color changes and other css is applied like font familly changes etc 
+    valid means the user should enter the valid detils like email etc*/
+    color:rgb(193, 24, 58) ;
+    transform: translateY(-30px);
+}
